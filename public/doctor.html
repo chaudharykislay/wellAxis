@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dashboard doctor">
+  <header>
+    <h1>Doctor Dashboard</h1>
+    <a href="index.html" id="logout" style="color:white;">Logout</a>
+  </header>
+  <section>
+    <div class="card">
+      <label>Patient Medical ID <input id="doctor-medicalId" /></label>
+      <label>Emergency Reason (optional) <input id="doctor-emergency-reason" /></label>
+      <button id="doctor-view-patient">View Patient</button>
+      <div id="doctor-patient-view" class="result"></div>
+    </div>
+    <div class="card">
+      <h3>Create Prescription</h3>
+      <label>Medical ID <input id="pr-medicalId" /></label>
+      <label>Notes <input id="pr-notes" /></label>
+      <label>Medicines <input id="pr-medicines" placeholder="Paracetamol, Vitamin C" /></label>
+      <button id="doctor-save-prescription">Save Prescription</button>
+      <div id="doctor-actions-result" class="result"></div>
+    </div>
+    <div class="card">
+      <h3>Appointments (Local)</h3>
+      <button id="doctor-view-appointments">Load Appointments</button>
+      <div id="doctor-appointments" class="result"></div>
+    </div>
+  </section>
+  <footer><small>Emergency views are audit logged.</small></footer>
+  <script src="doctor.js"></script>
+</body>
+</html>

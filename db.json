@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": "USR-4230d6db9bd7",
+      "role": "Admin",
+      "username": "admin",
+      "password": "42aea1e43955bc7301aa693fd23213cb:62b4b205e9e475f16782e7a21c1d7c6679d7302041abd6aef8281303125d4abf"
+    },
+    {
+      "id": "USR-5a98b1326b55",
+      "role": "Hospital",
+      "username": "citycare",
+      "password": "3f19c695d29c04d089b7528428479660:b8331e20bfbcdf2c5b153da01129e3005c2d5a0e164dd1509dfd60f3dc5e7ac8"
+    },
+    {
+      "id": "USR-3f07653ffd05",
+      "role": "Doctor",
+      "username": "drrao",
+      "password": "58080644f0180398e2a5e55b44db21f8:36c129f7049b61ab854265acc31d5fa81fe5a1fb0dc54f1ec071732e01de6870"
+    },
+    {
+      "id": "USR-ddbec39c7e82",
+      "role": "Patient",
+      "username": "john",
+      "password": "a93c9da14ab91643c724cf4c109142c9:2009cca7ec3d2c89fcd087c96ce2696fef9925cb0e3b1c02e01999b8bda6fdb4"
+    }
+  ],
+  "patients": [
+    {
+      "userId": "USR-ddbec39c7e82",
+      "medicalId": "MID-2025-B0B6964B",
+      "aadhaar": "MOCK",
+      "verified": true,
+      "profile": {
+        "allergies": [
+          "Peanuts"
+        ],
+        "vaccinations": [
+          "COVID-19"
+        ],
+        "surgeries": [],
+        "notes": []
+      }
+    }
+  ],
+  "doctors": [
+    {
+      "userId": "USR-3f07653ffd05",
+      "doctorId": "DOC-c128b9bc4def",
+      "name": "Dr. Rao",
+      "specialization": "Cardiology",
+      "status": "Pending",
+      "favorites": []
+    }
+  ],
+  "hospitals": [
+    {
+      "userId": "USR-5a98b1326b55",
+      "hospitalId": "HOSP-3059d7606f1a",
+      "name": "CityCare Hospital",
+      "govRegNo": "MOCKREG",
+      "licenseNo": "MOCKLIC",
+      "status": "Pending"
+    }
+  ],
+  "records": [],
+  "prescriptions": [],
+  "appointments": [],
+  "consents": [
+    {
+      "medicalId": "MID-2025-B0B6964B",
+      "allowedIds": []
+    }
+  ],
+  "audits": []
+}

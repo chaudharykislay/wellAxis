@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dashboard admin">
+  <header>
+    <h1>Admin Dashboard</h1>
+    <a href="index.html" id="logout" style="color:white;">Logout</a>
+  </header>
+  <section>
+    <div class="card">
+      <button id="admin-pending">View Pending Entities</button>
+      <div id="admin-pending-result" class="result"></div>
+    </div>
+    <div class="card">
+      <h3>Approve</h3>
+      <label>Type (Doctor/Hospital) <input id="approve-type" /></label>
+      <label>Entity ID <input id="approve-id" /></label>
+      <button id="admin-approve">Approve</button>
+    </div>
+    <div class="card">
+      <button id="admin-audit">View Audit Logs</button>
+      <div id="admin-audit-result" class="result"></div>
+    </div>
+  </section>
+  <footer><small>Keep system compliant by approving verified entities only.</small></footer>
+  <script src="admin.js"></script>
+</body>
+</html>

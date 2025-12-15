@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dashboard patient">
+  <header>
+    <h1>Patient Dashboard</h1>
+    <a href="index.html" id="logout" style="color:white;">Logout</a>
+  </header>
+  <section>
+    <div class="card">
+      <button id="patient-me">View Profile</button>
+      <div id="patient-profile" class="result"></div>
+    </div>
+    <div class="card">
+      <button id="patient-records">View Records</button>
+      <div id="patient-records-result" class="result"></div>
+    </div>
+    <div class="card">
+      <h3>Add Symptoms</h3>
+      <textarea id="symptoms" placeholder="Fever, cough ..."></textarea>
+      <button id="add-symptoms">Save Symptoms</button>
+      <div id="patient-actions-result" class="result"></div>
+    </div>
+    <div class="card">
+      <h3>Book Appointment</h3>
+      <label>Doctor ID <input id="appt-doctor" /></label>
+      <label>Hospital ID <input id="appt-hospital" /></label>
+      <button id="book-appt">Book</button>
+    </div>
+    <div class="card">
+      <h3>Manage Consent</h3>
+      <label>Allowed IDs (comma separated) <input id="allowed-ids" /></label>
+      <button id="update-consent">Update Consent</button>
+    </div>
+  </section>
+  <footer><small>Use your Medical ID to share consent.</small></footer>
+  <script src="patient.js"></script>
+</body>
+</html>
