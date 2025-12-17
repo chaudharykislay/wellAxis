@@ -7,21 +7,23 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="dashboard hospital">
-  <header>
-    <h1>Hospital Dashboard</h1>
-    <a href="index.html" id="logout" style="color:white;">Logout</a>
+  <div class="body-rotator"></div>
+  <div class="border-rotator"></div>
+  <header class="a-fade-in">
+    <h1 class="heading-gradient heading-bg a-slide-down a-fade-in">Hospital Dashboard</h1>
+    <a href="index.html" id="logout" class="a-fade-in delay-200" style="color:white;">Logout</a>
   </header>
-  <section>
-    <div class="card">
+  <section class="a-fade-in">
+    <div class="card a-slide-up delay-100">
       <h3>Upload Report</h3>
       <label>Medical ID <input id="rep-medicalId" /></label>
       <label>Type <input id="rep-type" placeholder="test-report" /></label>
       <textarea id="rep-content" placeholder="Report details..."></textarea>
-      <button id="hospital-upload-report">Upload Report</button>
+      <button id="hospital-upload-report" class="btn a-pulse">Upload Report</button>
       <div id="hospital-actions-result" class="result"></div>
     </div>
   </section>
-  <footer><small>Access controlled via patient consent settings.</small></footer>
+  <footer class="a-fade-in"><small>Access controlled via patient consent settings.</small></footer>
   <script src="hospital.js"></script>
 </body>
 </html>

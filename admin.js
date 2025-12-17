@@ -24,23 +24,48 @@ function api(path, method = 'GET', body) {
   }).then(r => r.json());
 }
 
-document.getElementById('logout').addEventListener('click', () => {
-  sessionStorage.clear();
-});
+// Helper to support new/old IDs after UI refresh
+const getEl = (a, b) => document.getElementById(a) || document.getElementById(b);
+const getOut = (...ids) => ids.map(id => document.getElementById(id)).find(Boolean);
 
-document.getElementById('admin-pending').addEventListener('click', async () => {
-  const out = await api('/admin/pending', 'GET');
-  document.getElementById('admin-output').textContent = JSON.stringify(out, null, 2);
-});
+const logoutEl = document.getElementById('logout');
+if (logoutEl) {
+  logoutEl.addEventListener('click', () => {
+    sessionStorage.clear();
+  });
+}
 
-document.getElementById('admin-approve').addEventListener('click', async () => {
-  const type = document.getElementById('approve-type').value.trim();
-  const entityId = document.getElementById('approve-id').value.trim();
-  const out = await api('/admin/approve', 'POST', { type, entityId });
-  document.getElementById('admin-output').textContent = JSON.stringify(out, null, 2);
-});
+const pendingBtn = getEl('admin-view-pending', 'admin-pending');
+if (pendingBtn) {
+  pendingBtn.addEventListener('click', async () => {
+    const out = await api('/admin/pending', 'GET');
+    const outEl = getOut('admin-pending', 'admin-pending-result', 'admin-output');
+    if (outEl) outEl.textContent = JSON.stringify(out, null, 2);
+  });
+}
 
-document.getElementById('admin-audit').addEventListener('click', async () => {
-  const out = await api('/admin/audits', 'GET');
-  document.getElementById('admin-output').textContent = JSON.stringify(out, null, 2);
-});
+const approveBtn = document.getElementById('admin-approve');
+if (approveBtn) {
+  approveBtn.addEventListener('click', async () => {
+    const idEl = getEl('admin-approve-id', 'approve-id');
+    const typeEl = document.getElementById('approve-type');
+    const id = idEl ? idEl.value.trim() : '';
+    let type = typeEl ? typeEl.value.trim() : (id.startsWith('DOC') ? 'Doctor' : id.startsWith('HOSP') ? 'Hospital' : '');
+    const outEl = getOut('admin-actions-result', 'admin-pending-result', 'admin-output');
+    if (!id || !type) {
+      if (outEl) outEl.textContent = JSON.stringify({ error: 'Provide type (Doctor/Hospital) or enter an ID starting with DOC/HOSP.' }, null, 2);
+      return;
+    }
+    const out = await api('/admin/approve', 'POST', { type, id });
+    if (outEl) outEl.textContent = JSON.stringify(out, null, 2);
+  });
+}
+
+const logsBtn = getEl('admin-view-logs', 'admin-audit');
+if (logsBtn) {
+  logsBtn.addEventListener('click', async () => {
+    const out = await api('/admin/audit', 'GET');
+    const outEl = getOut('admin-logs', 'admin-audit-result', 'admin-output');
+    if (outEl) outEl.textContent = JSON.stringify(out, null, 2);
+  });
+}

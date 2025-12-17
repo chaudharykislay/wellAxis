@@ -7,38 +7,36 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="dashboard patient">
-  <header>
-    <h1>Patient Dashboard</h1>
-    <a href="index.html" id="logout" style="color:white;">Logout</a>
+  <div class="body-rotator"></div>
+  <div class="border-rotator"></div>
+  <header class="a-fade-in">
+    <h1 class="heading-gradient heading-bg a-slide-down a-fade-in">Patient Dashboard</h1>
+    <a href="index.html" id="logout" class="a-fade-in delay-200" style="color:white;">Logout</a>
   </header>
-  <section>
-    <div class="card">
-      <button id="patient-me">View Profile</button>
+  <section class="a-fade-in">
+    <div class="card a-slide-up delay-100">
+      <button id="patient-me" class="btn a-pulse">View Profile</button>
       <div id="patient-profile" class="result"></div>
     </div>
-    <div class="card">
-      <button id="patient-records">View Records</button>
+    <div class="card a-slide-up delay-200">
+      <button id="patient-records" class="btn a-pulse">View Records</button>
       <div id="patient-records-result" class="result"></div>
     </div>
-    <div class="card">
+    <div class="card a-slide-up delay-300">
       <h3>Add Symptoms</h3>
       <textarea id="symptoms" placeholder="Fever, cough ..."></textarea>
-      <button id="add-symptoms">Save Symptoms</button>
+      <button id="add-symptoms" class="btn a-pulse">Save Symptoms</button>
       <div id="patient-actions-result" class="result"></div>
     </div>
-    <div class="card">
+    <div class="card a-slide-up delay-400">
       <h3>Book Appointment</h3>
       <label>Doctor ID <input id="appt-doctor" /></label>
       <label>Hospital ID <input id="appt-hospital" /></label>
-      <button id="book-appt">Book</button>
-    </div>
-    <div class="card">
-      <h3>Manage Consent</h3>
-      <label>Allowed IDs (comma separated) <input id="allowed-ids" /></label>
-      <button id="update-consent">Update Consent</button>
+      <button id="book-appt" class="btn a-pulse">Request Appointment</button>
+      <div id="patient-actions-result" class="result"></div>
     </div>
   </section>
-  <footer><small>Use your Medical ID to share consent.</small></footer>
+  <footer class="a-fade-in"><small>Patient actions use consent-first secure APIs.</small></footer>
   <script src="patient.js"></script>
 </body>
 </html>

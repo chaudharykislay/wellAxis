@@ -7,27 +7,31 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="dashboard admin">
-  <header>
-    <h1>Admin Dashboard</h1>
-    <a href="index.html" id="logout" style="color:white;">Logout</a>
+  <div class="body-rotator"></div>
+  <div class="border-rotator"></div>
+  <header class="a-fade-in">
+    <h1 class="heading-gradient heading-bg a-slide-down a-fade-in">Admin Dashboard</h1>
+    <a href="index.html" id="logout" class="a-fade-in delay-200" style="color:white;">Logout</a>
   </header>
-  <section>
-    <div class="card">
-      <button id="admin-pending">View Pending Entities</button>
-      <div id="admin-pending-result" class="result"></div>
+  <section class="a-fade-in">
+    <div class="card a-slide-up delay-100">
+      <h3>Pending Entities</h3>
+      <button id="admin-view-pending" class="btn a-pulse">Load Pending</button>
+      <div id="admin-pending" class="result"></div>
     </div>
-    <div class="card">
-      <h3>Approve</h3>
-      <label>Type (Doctor/Hospital) <input id="approve-type" /></label>
-      <label>Entity ID <input id="approve-id" /></label>
-      <button id="admin-approve">Approve</button>
+    <div class="card a-slide-up delay-200">
+      <h3>Approval</h3>
+      <label>Approve ID <input id="admin-approve-id" /></label>
+      <button id="admin-approve" class="btn a-pulse">Approve</button>
+      <div id="admin-actions-result" class="result"></div>
     </div>
-    <div class="card">
-      <button id="admin-audit">View Audit Logs</button>
-      <div id="admin-audit-result" class="result"></div>
+    <div class="card a-slide-up delay-300">
+      <h3>Audit Logs</h3>
+      <button id="admin-view-logs" class="btn a-pulse">View Logs</button>
+      <div id="admin-logs" class="result"></div>
     </div>
   </section>
-  <footer><small>Keep system compliant by approving verified entities only.</small></footer>
+  <footer class="a-fade-in"><small>Admin actions require multi-factor authentication.</small></footer>
   <script src="admin.js"></script>
 </body>
 </html>
